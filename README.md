@@ -1,26 +1,64 @@
-# ALLIANCE-ROLEPLAY-DASHBOARD
-Attacked By Unknown.Dev
-# INSTALL:
+# 🛰️ ALLIANCE ROLEPLAY DASHBOARD
 
-1. Put the alliance_dashboard folder inside resources/[local]/
-2. Add this to server.cfg:
-   ensure alliance_dashboard
-3. Restart the resource/server.
-4. Press F10 in FiveM.
+> ⚡ **Attacked By Unknown.Dev**
 
-# FRAMEWORK:
+---
 
-- Automatically detects ESX (es_extended) or QBCore (qb-core).
-- Without either framework, it still shows generic FiveM player/server data.
-- Job data is read when ESX/QBCore is detected.
-- For gangs, factions, robberies, economy and saved playtime, connect the resource
+## 📦 INSTALLATION
 
-  to the exact resources/database used by your server. Those values are not exposed
+**1️⃣** پوشه `alliance_dashboard` را داخل مسیر زیر قرار دهید:
 
-  by FiveM itself.
+```text
+resources/[local]/
+```
 
-# IMPORTANT:
-- The included HTML is the provided UI adapted for NUI.
-- No emoji characters are used.
-- F10 opens/closes the dashboard.
-- Escape closes it when NUI focus is active.
+**2️⃣** خط زیر را به `server.cfg` اضافه کنید:
+
+```cfg
+ensure alliance_dashboard
+```
+
+**3️⃣** ریسورس یا سرور را Restart کنید. 🔄
+
+**4️⃣** داخل FiveM کلید **F10** را بزنید تا داشبورد باز شود. 🎮
+
+---
+
+## ⚙️ FRAMEWORK
+
+🧩 داشبورد به‌صورت خودکار Framework سرور را شناسایی می‌کند:
+
+* 🔵 **ESX** → `es_extended`
+* 🟠 **QBCore** → `qb-core`
+* ⚪ **Standalone FiveM** → نمایش اطلاعات عمومی پلیر و سرور
+
+📋 در صورت شناسایی ESX یا QBCore، اطلاعات **Job** نیز دریافت می‌شود.
+
+---
+
+## 🔗 SERVER DATA
+
+برای نمایش اطلاعات اختصاصی زیر، باید داشبورد به ریسورس‌ها یا دیتابیس واقعی سرور متصل شود:
+
+* 👥 Gangs
+* 🏴 Factions
+* 💰 Economy
+* 🚨 Robberies
+* ⏱️ Saved Playtime
+
+> ⚠️ این اطلاعات به‌صورت مستقیم توسط FiveM ارائه نمی‌شوند و باید از ریسورس یا Database مربوط به سرور دریافت شوند.
+
+---
+
+## 🛠️ IMPORTANT
+
+* 🖥️ HTML ارائه‌شده برای **FiveM NUI** بهینه شده است.
+* 🚫 هیچ Emoji داخل UI استفاده نشده است.
+* 🎯 **F10** داشبورد را باز / بسته می‌کند.
+* ⌨️ **ESC** هنگام فعال بودن NUI Focus، داشبورد را می‌بندد.
+
+---
+
+### 🛡️ ALLIANCE ROLEPLAY
+
+**Powered by Unknown.Dev**
