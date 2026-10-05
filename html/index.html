@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alliance Roleplay</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:'Vazirmatn',sans-serif;
 background:#060b14;
@@ -18,7 +19,9 @@ radial-gradient(circle at 20% 20%,rgba(0,183,255,.08),transparent 25%),
 radial-gradient(circle at 80% 10%,rgba(123,97,255,.08),transparent 25%),
 radial-gradient(circle at 50% 90%,rgba(0,255,170,.06),transparent 25%),
 linear-gradient(180deg,#040811,#07111f 60%,#04070d);
+background-color:#060b14;
 }
+
 body::before{
 content:'';
 position:fixed;
@@ -27,14 +30,18 @@ background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=8
 opacity:.08;
 z-index:-2;
 filter:blur(1px);
+pointer-events:none;
 }
+
 body::after{
 content:'';
 position:fixed;
 inset:0;
 background:linear-gradient(180deg,rgba(4,8,17,.72),rgba(4,8,17,.9));
 z-index:-1;
+pointer-events:none;
 }
+
 .container{
 max-width:1450px;
 margin:18px auto;
@@ -43,8 +50,9 @@ border:1px solid rgba(255,255,255,.08);
 border-radius:28px;
 background:rgba(10,18,30,.55);
 backdrop-filter:blur(18px);
-box-shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.04);
 }
+
 .topbar{
 display:flex;
 justify-content:space-between;
@@ -53,6 +61,7 @@ margin-bottom:18px;
 padding-bottom:16px;
 border-bottom:1px solid rgba(255,255,255,.06);
 }
+
 .logo{
 display:flex;
 align-items:center;
@@ -61,33 +70,42 @@ font-weight:800;
 letter-spacing:1px;
 font-size:24px;
 }
+
 .logo .diamond{
-width:18px;height:18px;
+width:18px;
+height:18px;
 border:2px solid #58d7ff;
 transform:rotate(45deg);
 border-radius:2px;
 box-shadow:0 0 16px rgba(88,215,255,.65);
 }
+
 .close-btn{
-width:48px;height:48px;border-radius:16px;
-display:grid;place-items:center;
+width:48px;
+height:48px;
+border-radius:16px;
+display:grid;
+place-items:center;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.03);
 color:#a9b6cc;
 cursor:pointer;
 transition:.25s;
 }
+
 .close-btn:hover{
 background:rgba(255,255,255,.08);
 color:#fff;
 transform:translateY(-1px);
 }
+
 .tabs{
 display:grid;
 grid-template-columns:repeat(6,1fr);
 gap:14px;
 margin-bottom:22px;
 }
+
 .tab{
 padding:16px 18px;
 border-radius:20px;
@@ -102,26 +120,45 @@ transition:.25s;
 font-weight:700;
 color:#aab5c8;
 }
+
 .tab:hover{
 transform:translateY(-2px);
 background:rgba(255,255,255,.05);
 color:#fff;
 }
+
 .tab.active{
 background:linear-gradient(135deg,rgba(0,183,255,.16),rgba(0,255,170,.10));
 border-color:rgba(88,215,255,.35);
-box-shadow:0 0 28px rgba(88,215,255,.16), inset 0 0 0 1px rgba(88,215,255,.12);
+box-shadow:0 0 28px rgba(88,215,255,.16),inset 0 0 0 1px rgba(88,215,255,.12);
 color:#8fe8ff;
 }
-.tab span{font-size:18px}
-.page{display:none;animation:fade .28s ease}
-.page.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.tab span{
+font-size:10px;
+letter-spacing:.7px;
+}
+
+.page{
+display:none;
+animation:fade .28s ease;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(8px)}
+to{opacity:1;transform:none}
+}
+
 .hero{
 display:grid;
 grid-template-columns:340px 1fr;
 gap:22px;
 }
+
 .card{
 background:rgba(12,20,34,.62);
 border:1px solid rgba(255,255,255,.08);
@@ -130,25 +167,33 @@ padding:22px;
 position:relative;
 overflow:hidden;
 backdrop-filter:blur(12px);
-box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 12px 32px rgba(0,0,0,.28);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 12px 32px rgba(0,0,0,.28);
 }
+
 .card::before{
 content:'';
 position:absolute;
 inset:auto -20% 70% auto;
-width:220px;height:220px;
+width:220px;
+height:220px;
 background:radial-gradient(circle,rgba(88,215,255,.14),transparent 65%);
 pointer-events:none;
 }
-.profile{text-align:center}
+
+.profile{
+text-align:center;
+}
+
 .profile img{
-width:140px;height:140px;
+width:140px;
+height:140px;
 object-fit:cover;
 border-radius:28px;
 border:1px solid rgba(88,215,255,.35);
 margin-bottom:18px;
 box-shadow:0 0 30px rgba(88,215,255,.18);
 }
+
 .profile small{
 display:block;
 color:#79dfff;
@@ -156,44 +201,58 @@ letter-spacing:2px;
 margin-bottom:8px;
 font-weight:700;
 }
+
 .profile h1{
 font-size:54px;
 line-height:1;
 margin-bottom:10px;
 }
-.profile p{color:#8fa1bd;margin-bottom:18px}
+
+.profile p{
+color:#8fa1bd;
+margin-bottom:18px;
+}
+
 .gradient-line{
-width:120px;height:3px;border-radius:999px;
+width:120px;
+height:3px;
+border-radius:999px;
 margin:0 auto 20px;
 background:linear-gradient(90deg,#57d8ff,#8b5cf6,#00ffb2);
 }
+
 .stats{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
 margin-top:14px;
 }
+
 .stat{
 padding:18px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.02);
 }
+
 .stat h2{
 font-size:34px;
 margin-bottom:6px;
 }
+
 .stat span{
 font-size:12px;
 letter-spacing:1px;
 color:#90a0ba;
 }
+
 .quick{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:10px;
 margin-top:18px;
 }
+
 .quick .q{
 padding:14px 10px;
 border-radius:18px;
@@ -203,6 +262,7 @@ text-align:center;
 font-size:12px;
 color:#b9c4d7;
 }
+
 .quick .num{
 display:inline-block;
 padding:3px 8px;
@@ -212,6 +272,7 @@ margin-bottom:8px;
 background:rgba(255,255,255,.08);
 color:#fff;
 }
+
 .steam{
 margin-top:18px;
 display:flex;
@@ -223,23 +284,39 @@ border-radius:18px;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.02);
 }
+
 .steam .id{
 font-size:13px;
 color:#9fb1c9;
 word-break:break-all;
 }
+
+#copyIdentifier{
+cursor:pointer;
+transition:.2s;
+}
+
+#copyIdentifier:hover{
+color:#8fe8ff;
+}
+
 .main-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:18px;
 }
+
 .section-title{
 display:flex;
 align-items:center;
 justify-content:space-between;
 margin-bottom:16px;
 }
-.section-title h3{font-size:18px}
+
+.section-title h3{
+font-size:18px;
+}
+
 .badge{
 padding:8px 12px;
 border-radius:999px;
@@ -248,6 +325,7 @@ background:rgba(88,215,255,.12);
 border:1px solid rgba(88,215,255,.25);
 color:#8fe8ff;
 }
+
 .rank-item{
 display:flex;
 align-items:center;
@@ -260,24 +338,32 @@ border:1px solid rgba(255,255,255,.06);
 background:rgba(255,255,255,.02);
 transition:.2s;
 }
+
 .rank-item:hover{
 background:rgba(255,255,255,.04);
 transform:translateY(-1px);
 }
+
 .rank-left{
 display:flex;
 align-items:center;
 gap:12px;
 }
+
 .medal{
-width:36px;height:36px;border-radius:50%;
-display:grid;place-items:center;
+width:36px;
+height:36px;
+border-radius:50%;
+display:grid;
+place-items:center;
 font-weight:800;
 color:#111;
 }
+
 .gold{background:#f5c84b}
 .silver{background:#c7ced9}
 .bronze{background:#d38b4d}
+
 .online{
 padding:8px 12px;
 border-radius:14px;
@@ -287,12 +373,14 @@ border:1px solid rgba(139,92,246,.22);
 color:#c7b5ff;
 white-space:nowrap;
 }
+
 .widgets{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:16px;
 margin-top:18px;
 }
+
 .widget{
 padding:18px;
 border-radius:22px;
@@ -300,8 +388,17 @@ border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.02);
 min-height:130px;
 }
-.widget h4{margin-bottom:10px}
-.widget p{color:#a7b4c9;font-size:14px;line-height:1.8}
+
+.widget h4{
+margin-bottom:10px;
+}
+
+.widget p{
+color:#a7b4c9;
+font-size:14px;
+line-height:1.8;
+}
+
 .widget a{
 display:inline-flex;
 align-items:center;
@@ -311,11 +408,13 @@ color:#8fe8ff;
 text-decoration:none;
 font-weight:700;
 }
+
 .time-box{
 display:flex;
 justify-content:flex-end;
 margin-bottom:18px;
 }
+
 .clock{
 padding:18px 22px;
 border-radius:22px;
@@ -324,31 +423,39 @@ background:linear-gradient(135deg,rgba(88,215,255,.10),rgba(0,255,170,.06));
 text-align:center;
 min-width:180px;
 }
+
 .clock .t{
 font-size:38px;
 font-weight:800;
 color:#8fe8ff;
 }
+
 .clock .s{
 font-size:12px;
 letter-spacing:3px;
 color:#9ab0c9;
 }
+
 .socials{
 display:flex;
 gap:12px;
 justify-content:flex-end;
 margin-bottom:14px;
 }
+
 .socials a{
-width:54px;height:54px;border-radius:18px;
-display:grid;place-items:center;
+width:54px;
+height:54px;
+border-radius:18px;
+display:grid;
+place-items:center;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.03);
 text-decoration:none;
 color:#c7d2e4;
 font-size:22px;
 }
+
 .banner{
 display:grid;
 grid-template-columns:1.1fr .9fr;
@@ -361,16 +468,19 @@ background:rgba(10,18,30,.55);
 margin-bottom:20px;
 overflow:hidden;
 }
+
 .banner h2{
 font-size:64px;
 line-height:1;
 margin:8px 0 12px;
 }
+
 .banner p{
 color:#a9b6cc;
 line-height:2;
 margin-bottom:22px;
 }
+
 .banner img{
 width:100%;
 max-width:420px;
@@ -379,11 +489,13 @@ border-radius:26px;
 border:1px solid rgba(255,255,255,.08);
 box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
+
 .actions{
 display:flex;
 gap:14px;
 flex-wrap:wrap;
 }
+
 .btn{
 padding:14px 22px;
 border-radius:18px;
@@ -394,26 +506,32 @@ align-items:center;
 gap:8px;
 border:1px solid rgba(255,255,255,.08);
 }
+
 .btn.primary{
 background:linear-gradient(135deg,rgba(0,255,170,.18),rgba(88,215,255,.12));
 border-color:rgba(0,255,170,.28);
 color:#cffff1;
 }
+
 .btn.secondary{
 background:rgba(255,255,255,.03);
 color:#d7e3f6;
 }
+
 .section-head{
 display:flex;
 align-items:center;
 gap:10px;
 margin:6px 0 18px;
 }
+
 .section-head .line{
-flex:1;height:2px;
+flex:1;
+height:2px;
 background:linear-gradient(90deg,transparent,#6ee7ff,transparent);
 border-radius:999px;
 }
+
 .horizontal{
 display:grid;
 grid-template-columns:repeat(6,minmax(150px,1fr));
@@ -421,6 +539,7 @@ gap:14px;
 overflow-x:auto;
 padding-bottom:4px;
 }
+
 .mini{
 padding:14px;
 border-radius:22px;
@@ -429,14 +548,20 @@ background:rgba(255,255,255,.02);
 text-align:center;
 min-width:150px;
 }
+
 .mini img{
-width:70px;height:70px;
+width:70px;
+height:70px;
 object-fit:cover;
 border-radius:18px;
 border:1px solid rgba(255,255,255,.08);
 margin-bottom:10px;
 }
-.mini h5{margin-bottom:6px}
+
+.mini h5{
+margin-bottom:6px;
+}
+
 .status{
 display:inline-flex;
 align-items:center;
@@ -448,28 +573,41 @@ background:rgba(0,255,170,.10);
 border:1px solid rgba(0,255,170,.22);
 color:#9fffd8;
 }
+
 .status.off{
 background:rgba(255,79,120,.10);
 border-color:rgba(255,79,120,.24);
 color:#ffb2c7;
 }
+
 .grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
-.job-card,.special-card,.rob-card,.leader-card{
+
+.job-card,
+.special-card,
+.rob-card,
+.leader-card{
 padding:18px;
 border-radius:24px;
 border:1px solid rgba(255,255,255,.08);
 background:rgba(255,255,255,.02);
 transition:.22s;
 }
-.job-card:hover,.special-card:hover,.rob-card:hover,.leader-card:hover{
+
+.job-card:hover,
+.special-card:hover,
+.rob-card:hover,
+.leader-card:hover{
 transform:translateY(-3px);
 background:rgba(255,255,255,.04);
 }
-.job-card img,.special-card img,.rob-card img{
+
+.job-card img,
+.special-card img,
+.rob-card img{
 width:100%;
 height:150px;
 object-fit:cover;
@@ -477,15 +615,26 @@ border-radius:18px;
 margin-bottom:14px;
 border:1px solid rgba(255,255,255,.08);
 }
-.rob-card .row,.special-card .row{
+
+.rob-card .row,
+.special-card .row{
 display:flex;
 justify-content:space-between;
 margin-top:10px;
 color:#a8b6cc;
 font-size:14px;
 }
-.price{color:#7dffcf;font-weight:800}
-.locked{color:#ffb2c7;font-weight:800}
+
+.price{
+color:#7dffcf;
+font-weight:800;
+}
+
+.locked{
+color:#ffb2c7;
+font-weight:800;
+}
+
 .rule-btn{
 display:block;
 margin-top:14px;
@@ -498,60 +647,81 @@ color:#ffd7c7;
 border:1px solid rgba(255,140,100,.25);
 background:rgba(255,140,100,.08);
 }
+
 .leader-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
+
 .leader-card{
 text-align:center;
 position:relative;
 overflow:hidden;
 }
+
 .leader-card::before{
 content:'';
 position:absolute;
 inset:-40% auto auto -20%;
-width:180px;height:180px;
+width:180px;
+height:180px;
 background:radial-gradient(circle,rgba(139,92,246,.18),transparent 65%);
 }
+
 .avatar{
-width:96px;height:96px;
+width:96px;
+height:96px;
 border-radius:28px;
 object-fit:cover;
 border:2px solid rgba(255,255,255,.12);
 margin:6px auto 14px;
 display:block;
 }
+
 .rank-number{
-width:38px;height:38px;
+width:38px;
+height:38px;
 border-radius:50%;
-display:grid;place-items:center;
+display:grid;
+place-items:center;
 margin:0 auto 10px;
 font-weight:900;
 background:linear-gradient(135deg,#f5c84b,#f59e0b);
 color:#111;
 box-shadow:0 6px 18px rgba(245,200,75,.28);
 }
-.leader-card h4{font-size:22px;margin-bottom:6px}
-.leader-card p{color:#9eb0c8;margin-bottom:14px}
+
+.leader-card h4{
+font-size:22px;
+margin-bottom:6px;
+}
+
+.leader-card p{
+color:#9eb0c8;
+margin-bottom:14px;
+}
+
 .leader-stats{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
 margin-top:14px;
 }
+
 .leader-stats div{
 padding:12px;
 border-radius:16px;
 background:rgba(255,255,255,.03);
 border:1px solid rgba(255,255,255,.06);
 }
+
 .leader-stats strong{
 display:block;
 font-size:20px;
 margin-bottom:4px;
 }
+
 .footer{
 margin-top:24px;
 padding-top:16px;
@@ -560,249 +730,563 @@ text-align:center;
 color:#7f91ad;
 font-size:13px;
 }
-@media (max-width:1200px){
-.hero{grid-template-columns:1fr}
-.main-grid{grid-template-columns:1fr}
-.widgets{grid-template-columns:1fr}
-.grid{grid-template-columns:repeat(2,1fr)}
-.leader-grid{grid-template-columns:1fr}
-.banner{grid-template-columns:1fr}
-.banner h2{font-size:48px}
-.tabs{grid-template-columns:repeat(3,1fr)}
-}
-@media (max-width:700px){
-.container{margin:8px;padding:12px;border-radius:20px}
-.logo{font-size:18px}
-.tabs{grid-template-columns:repeat(2,1fr);gap:10px}
-.tab{padding:14px 10px;font-size:13px}
-.profile h1{font-size:42px}
-.banner{padding:18px}
-.banner h2{font-size:38px}
-.grid{grid-template-columns:1fr}
-.horizontal{grid-template-columns:repeat(2,minmax(140px,1fr))}
-.stats{grid-template-columns:1fr}
-.socials{justify-content:center}
-.time-box{justify-content:center}
-.clock{width:100%}
-}
 
 /* FiveM NUI */
-html,body{user-select:none}
-body{display:none}
-body.nui-open{display:block}
-.tab span{font-size:10px;letter-spacing:.7px}
-.close-btn{font-family:inherit}
-.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#00ffb2;box-shadow:0 0 12px #00ffb2;margin-left:6px}
-.data-loading{opacity:.55;pointer-events:none}
-@media (max-width:700px){body{font-size:13px}}
 
+html,
+body{
+user-select:none;
+}
+
+/*
+   مهم:
+   در FiveM صفحه تا زمانی که NUI باز نشده مخفی است.
+   در Preview مرورگر چون GetParentResourceName وجود ندارد،
+   کلاس preview اضافه می‌شود و صفحه نمایش داده می‌شود.
+*/
+body.nui-mode{
+display:none;
+}
+
+body.nui-mode.nui-open{
+display:block;
+}
+
+body.preview-mode{
+display:block;
+}
+
+.close-btn{
+font-family:inherit;
+}
+
+.live-dot{
+display:inline-block;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#00ffb2;
+box-shadow:0 0 12px #00ffb2;
+margin-left:6px;
+}
+
+.data-loading{
+opacity:.55;
+pointer-events:none;
+}
+
+@media (max-width:1200px){
+.hero{
+grid-template-columns:1fr;
+}
+
+.main-grid{
+grid-template-columns:1fr;
+}
+
+.widgets{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.leader-grid{
+grid-template-columns:1fr;
+}
+
+.banner{
+grid-template-columns:1fr;
+}
+
+.banner h2{
+font-size:48px;
+}
+
+.tabs{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media (max-width:700px){
+body{
+font-size:13px;
+}
+
+.container{
+margin:8px;
+padding:12px;
+border-radius:20px;
+}
+
+.logo{
+font-size:18px;
+}
+
+.tabs{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.tab{
+padding:14px 10px;
+font-size:13px;
+}
+
+.profile h1{
+font-size:42px;
+}
+
+.banner{
+padding:18px;
+}
+
+.banner h2{
+font-size:38px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.horizontal{
+grid-template-columns:repeat(2,minmax(140px,1fr));
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.socials{
+justify-content:center;
+}
+
+.time-box{
+justify-content:center;
+}
+
+.clock{
+width:100%;
+}
+}
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <div class="topbar">
-<div class="logo"><div class="diamond"></div>Alliance | RolePlay</div>
+<div class="logo">
+<div class="diamond"></div>
+Alliance | RolePlay
+</div>
+
 <div class="close-btn">✕</div>
 </div>
 
 <div class="tabs">
-<div class="tab active" onclick="showPage('home',this)"><span>HOME</span>Home</div>
-<div class="tab" onclick="showPage('jobs',this)"><span>JOBS</span> Jobs</div>
-<div class="tab" onclick="showPage('robberies',this)"><span>ROBBERIES</span>Robberi</div>
-<div class="tab" onclick="showPage('special',this)"><span>CAFE</span>Cafe</div>
-<div class="tab" onclick="showPage('leaderboard',this)"><span>LEADERBOARD</span> Lider Bord</div>
-<div class="tab" onclick="showPage('learn',this)"><span>GUIDE</span> Learn</div>
+
+<div class="tab active" onclick="showPage('home',this)">
+<span>HOME</span>Home
+</div>
+
+<div class="tab" onclick="showPage('jobs',this)">
+<span>JOBS</span> Jobs
+</div>
+
+<div class="tab" onclick="showPage('robberies',this)">
+<span>ROBBERIES</span>Robberi
+</div>
+
+<div class="tab" onclick="showPage('special',this)">
+<span>CAFE</span>Cafe
+</div>
+
+<div class="tab" onclick="showPage('leaderboard',this)">
+<span>LEADERBOARD</span> Lider Bord
+</div>
+
+<div class="tab" onclick="showPage('learn',this)">
+<span>GUIDE</span> Learn
+</div>
+
 </div>
 
 <section id="home" class="page active">
+
 <div class="hero">
+
 <div class="card profile">
-<img src="https://placehold.co/300x300/0b1320/6ee7ff?text=LOGO" alt="logo">
+
+<img
+src="https://placehold.co/300x300/0b1320/6ee7ff?text=LOGO"
+alt="logo"
+>
+
 <small>WELCOME BACK</small>
+
 <h1 id="playerName">Loading...</h1>
+
 <p id="playerMeta">Connecting to server...</p>
+
 <div class="gradient-line"></div>
 
 <div class="stats">
-<div class="stat"><h2 id="playersOnline">0</h2><span>PLAYERS ONLINE</span></div>
-<div class="stat"><h2 id="playtime">0h</h2><span>TOTAL PLAYTIME</span></div>
+
+<div class="stat">
+<h2 id="playersOnline">0</h2>
+<span>PLAYERS ONLINE</span>
+</div>
+
+<div class="stat">
+<h2 id="playtime">0h</h2>
+<span>TOTAL PLAYTIME</span>
+</div>
+
 </div>
 
 <div class="quick">
-<div class="q"><div class="num">36</div><div>VERIFY</div></div>
-<div class="q"><div class="num">37</div><div>COLLECTOR</div></div>
-<div class="q"><div class="num">112</div><div>PREMIUM</div></div>
+
+<div class="q">
+<div class="num">36</div>
+<div>VERIFY</div>
+</div>
+
+<div class="q">
+<div class="num">37</div>
+<div>COLLECTOR</div>
+</div>
+
+<div class="q">
+<div class="num">112</div>
+<div>PREMIUM</div>
+</div>
+
 </div>
 
 <div class="steam">
+
 <div>
-<div style="font-size:12px;color:#8fe8ff;margin-bottom:4px">STEAM HEX</div>
-<div class="id">steam:11000015bc6bbd7</div>
+<div style="font-size:12px;color:#8fe8ff;margin-bottom:4px">
+STEAM HEX
 </div>
-<div>COPY</div>
+
+<div class="id" id="identifier">
+steam:11000015bc6bbd7
 </div>
 </div>
 
+<div id="copyIdentifier">
+COPY
+</div>
+
+</div>
+
+</div>
+
 <div>
+
 <div class="socials">
 <a href="#">IG</a>
 <a href="#">YT</a>
 </div>
 
 <div class="time-box">
+
 <div class="clock">
+
 <div class="t" id="clock">03:31</div>
-<div class="s">LOCAL TIME</div>
+
+<div class="s">
+LOCAL TIME
 </div>
+
+</div>
+
 </div>
 
 <div class="main-grid">
+
 <div class="card">
+
 <div class="section-title">
 <h3>Populous factions</h3>
 <span class="badge">Online</span>
 </div>
 
 <div class="rank-item">
-<div class="rank-left"><div class="medal gold">1</div><strong>Police</strong></div>
+<div class="rank-left">
+<div class="medal gold">1</div>
+<strong>Police</strong>
+</div>
 <div class="online">12 عضو آنلاین</div>
 </div>
+
 <div class="rank-item">
-<div class="rank-left"><div class="medal silver">2</div><strong>Sheriff</strong></div>
+<div class="rank-left">
+<div class="medal silver">2</div>
+<strong>Sheriff</strong>
+</div>
 <div class="online">12 عضو آنلاین</div>
 </div>
+
 <div class="rank-item">
-<div class="rank-left"><div class="medal bronze">3</div><strong>FBI</strong></div>
+<div class="rank-left">
+<div class="medal bronze">3</div>
+<strong>FBI</strong>
+</div>
 <div class="online">9 عضو آنلاین</div>
 </div>
+
 </div>
 
 <div class="card">
+
 <div class="section-title">
 <h3>Active gangs</h3>
 <span class="badge">Online</span>
 </div>
 
 <div class="rank-item">
-<div class="rank-left"><div class="medal gold">1</div><strong>Liquid</strong></div>
+<div class="rank-left">
+<div class="medal gold">1</div>
+<strong>Liquid</strong>
+</div>
 <div class="online">10 members online</div>
 </div>
+
 <div class="rank-item">
-<div class="rank-left"><div class="medal silver">2</div><strong>GHATELIN</strong></div>
+<div class="rank-left">
+<div class="medal silver">2</div>
+<strong>GHATELIN</strong>
+</div>
 <div class="online">8 members online</div>
 </div>
+
 <div class="rank-item">
-<div class="rank-left"><div class="medal bronze">3</div><strong>Moltafet</strong></div>
+<div class="rank-left">
+<div class="medal bronze">3</div>
+<strong>Moltafet</strong>
+</div>
 <div class="online">8 members online</div>
 </div>
+
 </div>
+
 </div>
 
 <div class="widgets">
+
 <div class="widget">
 <h4>Dashboard</h4>
-<p>View player information, activity statistics, and manage user account.</p>
+<p>
+View player information, activity statistics, and manage user account.
+</p>
 <a href="#">Log in to the panel ↗</a>
 </div>
+
 <div class="widget">
 <h4>Store</h4>
-<p>Purchase VIP status, special items, and exclusive server packages.</p>
+<p>
+Purchase VIP status, special items, and exclusive server packages.
+</p>
 <a href="#">Enter the store ↗</a>
 </div>
+
 <div class="widget">
 <h4>Server Rules</h4>
-<p>Thoroughly review the roleplay rules to avoid receiving penalties.</p>
+<p>
+Thoroughly review the roleplay rules to avoid receiving penalties.
+</p>
 <a href="#">View rules ↗</a>
 </div>
+
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 <section id="jobs" class="page">
-<div class="section-head"><h2>Job Directory</h2><div class="line"></div></div>
+
+<div class="section-head">
+<h2>Job Directory</h2>
+<div class="line"></div>
+</div>
 
 <div class="banner">
+
 <div>
-<div class="status">● SELECTED DEPARTMENT</div>
+
+<div class="status">
+● SELECTED DEPARTMENT
+</div>
+
 <h2>DOJ</h2>
-<p>This body handles the registration of complaints, marriage matters, the investigation of internal organizational violations, and the processing of special cases.</p>
+
+<p>
+This body handles the registration of complaints, marriage matters,
+the investigation of internal organizational violations,
+and the processing of special cases.
+</p>
+
 <div class="actions">
-<a class="btn primary" href="#">ONLINE4 people on shift</a>
-<a class="btn secondary" href="#">💬 Join Discord</a>
+
+<a class="btn primary" href="#">
+ONLINE4 people on shift
+</a>
+
+<a class="btn secondary" href="#">
+Join Discord
+</a>
+
 </div>
+
 </div>
-<img src="https://placehold.co/500x500/0b1320/d4af37?text=DOJ+BADGE" alt="DOJ">
+
+<img
+src="https://placehold.co/500x500/0b1320/d4af37?text=DOJ+BADGE"
+alt="DOJ"
+>
+
 </div>
 
 <div class="horizontal">
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=DOJ" alt=""><h5>DOJ</h5><div class="status">4 ON DUTY</div></div>
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=FBI" alt=""><h5>FBI</h5><div class="status">9 ON DUTY</div></div>
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=POLICE" alt=""><h5>Police</h5><div class="status">12 ON DUTY</div></div>
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=FORCES" alt=""><h5>Forces</h5><div class="status">5 ON DUTY</div></div>
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=SHERIFF" alt=""><h5>Sheriff</h5><div class="status">12 ON DUTY</div></div>
-<div class="mini"><img src="https://placehold.co/120x120/101827/ffffff?text=TAXI" alt=""><h5>Taxi</h5><div class="status">3 ON DUTY</div></div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=DOJ" alt="">
+<h5>DOJ</h5>
+<div class="status">4 ON DUTY</div>
 </div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=FBI" alt="">
+<h5>FBI</h5>
+<div class="status">9 ON DUTY</div>
+</div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=POLICE" alt="">
+<h5>Police</h5>
+<div class="status">12 ON DUTY</div>
+</div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=FORCES" alt="">
+<h5>Forces</h5>
+<div class="status">5 ON DUTY</div>
+</div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=SHERIFF" alt="">
+<h5>Sheriff</h5>
+<div class="status">12 ON DUTY</div>
+</div>
+
+<div class="mini">
+<img src="https://placehold.co/120x120/101827/ffffff?text=TAXI" alt="">
+<h5>Taxi</h5>
+<div class="status">3 ON DUTY</div>
+</div>
+
+</div>
+
 </section>
 
 <section id="robberies" class="page">
-<div class="section-head"><h2>Robberies</h2><div class="line"></div></div>
+
+<div class="section-head">
+<h2>Robberies</h2>
+<div class="line"></div>
+</div>
 
 <div class="grid">
+
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Central+Bank" alt="">
 <h3>Central Bank</h3>
-<div class="row"><span>Status</span><span class="locked">01:02:28</span></div>
+<div class="row">
+<span>Status</span>
+<span class="locked">01:02:28</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
 
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Bobcat" alt="">
 <h3>Bobcat</h3>
-<div class="row"><span>Status</span><span class="price">FREE</span></div>
+<div class="row">
+<span>Status</span>
+<span class="price">FREE</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
 
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Maze+Bank" alt="">
 <h3>Maze Bank</h3>
-<div class="row"><span>Status</span><span class="price">FREE</span></div>
+<div class="row">
+<span>Status</span>
+<span class="price">FREE</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
 
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Liberty+Bank" alt="">
 <h3>Liberty Bank</h3>
-<div class="row"><span>Status</span><span class="price">FREE</span></div>
+<div class="row">
+<span>Status</span>
+<span class="price">FREE</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
 
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Paleto+Bank" alt="">
 <h3>Paleto Bank</h3>
-<div class="row"><span>Status</span><span class="price">FREE</span></div>
+<div class="row">
+<span>Status</span>
+<span class="price">FREE</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
 
 <div class="rob-card">
 <img src="https://placehold.co/600x320/0f1725/ffffff?text=Bank+Sandy" alt="">
 <h3>Bank Sandy</h3>
-<div class="row"><span>Status</span><span class="price">FREE</span></div>
+<div class="row">
+<span>Status</span>
+<span class="price">FREE</span>
+</div>
 <a class="rule-btn" href="#">View Rules</a>
 </div>
+
 </div>
+
 </section>
 
 <section id="special" class="page">
-<div class="section-head"><h2>Special Jobs</h2><div class="line"></div></div>
+
+<div class="section-head">
+<h2>Special Jobs</h2>
+<div class="line"></div>
+</div>
 
 <div class="grid">
+
 <div class="special-card">
 <img src="https://placehold.co/600x320/1b1020/ff7ad9?text=CatCafe" alt="">
 <h3>CatCafe</h3>
 <div class="row"><span>مالک</span><strong>Arsham</strong></div>
 <div class="row"><span>تلفن</span><strong>0870922</strong></div>
-<div style="margin-top:14px"><span class="status off">● CLOSED</span></div>
+<div style="margin-top:14px">
+<span class="status off">● CLOSED</span>
+</div>
 </div>
 
 <div class="special-card">
@@ -810,7 +1294,9 @@ body.nui-open{display:block}
 <h3>Triad</h3>
 <div class="row"><span>مالک</span><strong>Not set</strong></div>
 <div class="row"><span>تلفن</span><strong>Not set</strong></div>
-<div style="margin-top:14px"><span class="status off">● CLOSED</span></div>
+<div style="margin-top:14px">
+<span class="status off">● CLOSED</span>
+</div>
 </div>
 
 <div class="special-card">
@@ -818,7 +1304,9 @@ body.nui-open{display:block}
 <h3>Bahamas</h3>
 <div class="row"><span>مالک</span><strong>Anthonyo</strong></div>
 <div class="row"><span>تلفن</span><strong>0881309</strong></div>
-<div style="margin-top:14px"><span class="status off">● CLOSED</span></div>
+<div style="margin-top:14px">
+<span class="status off">● CLOSED</span>
+</div>
 </div>
 
 <div class="special-card">
@@ -826,7 +1314,9 @@ body.nui-open{display:block}
 <h3>Kharchang</h3>
 <div class="row"><span>مالک</span><strong>HADI</strong></div>
 <div class="row"><span>تلفن</span><strong>0111111</strong></div>
-<div style="margin-top:14px"><span class="status">● OPEN</span></div>
+<div style="margin-top:14px">
+<span class="status">● OPEN</span>
+</div>
 </div>
 
 <div class="special-card">
@@ -834,7 +1324,9 @@ body.nui-open{display:block}
 <h3>Artist</h3>
 <div class="row"><span>مالک</span><strong>Not set</strong></div>
 <div class="row"><span>تلفن</span><strong>Not set</strong></div>
-<div style="margin-top:14px"><span class="status off">● CLOSED</span></div>
+<div style="margin-top:14px">
+<span class="status off">● CLOSED</span>
+</div>
 </div>
 
 <div class="special-card">
@@ -842,148 +1334,444 @@ body.nui-open{display:block}
 <h3>Jordan</h3>
 <div class="row"><span>مالک</span><strong>metadon</strong></div>
 <div class="row"><span>تلفن</span><strong>0177888</strong></div>
-<div style="margin-top:14px"><span class="status">● OPEN</span></div>
+<div style="margin-top:14px">
+<span class="status">● OPEN</span>
 </div>
 </div>
+
+</div>
+
 </section>
 
 <section id="leaderboard" class="page">
-<div class="section-head"><h2>Leaderboard</h2><div class="line"></div></div>
+
+<div class="section-head">
+<h2>Leaderboard</h2>
+<div class="line"></div>
+</div>
 
 <div class="leader-grid">
+
 <div class="leader-card">
+
 <div class="rank-number">1</div>
-<img class="avatar" src="https://placehold.co/200x200/101827/ffffff?text=1" alt="">
+
+<img
+class="avatar"
+src="https://placehold.co/200x200/101827/ffffff?text=1"
+alt=""
+>
+
 <h4>A-G</h4>
+
 <p>بهترین بازیکن ماه</p>
+
 <div class="leader-stats">
-<div><strong>135h</strong><span>Playtime</span></div>
-<div><strong>+520</strong><span>Level</span></div>
+
+<div>
+<strong>135h</strong>
+<span>Playtime</span>
 </div>
+
+<div>
+<strong>+520</strong>
+<span>Level</span>
+</div>
+
+</div>
+
 </div>
 
 <div class="leader-card">
+
 <div class="rank-number">2</div>
-<img class="avatar" src="https://placehold.co/200x200/101827/ffffff?text=2" alt="">
+
+<img
+class="avatar"
+src="https://placehold.co/200x200/101827/ffffff?text=2"
+alt=""
+>
+
 <h4>Liquid</h4>
+
 <p>Top active gang</p>
+
 <div class="leader-stats">
-<div><strong>10</strong><span>Members</span></div>
-<div><strong>87%</strong><span>Activity</span></div>
+
+<div>
+<strong>10</strong>
+<span>Members</span>
 </div>
+
+<div>
+<strong>87%</strong>
+<span>Activity</span>
+</div>
+
+</div>
+
 </div>
 
 <div class="leader-card">
+
 <div class="rank-number">3</div>
-<img class="avatar" src="https://placehold.co/200x200/101827/ffffff?text=3" alt="">
+
+<img
+class="avatar"
+src="https://placehold.co/200x200/101827/ffffff?text=3"
+alt=""
+>
+
 <h4>Police</h4>
+
 <p>Top active Jobs</p>
+
 <div class="leader-stats">
-<div><strong>12</strong><span>Online</span></div>
-<div><strong>245</strong><span>Cases</span></div>
+
+<div>
+<strong>12</strong>
+<span>Online</span>
 </div>
+
+<div>
+<strong>245</strong>
+<span>Cases</span>
 </div>
+
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="learn" class="page">
+
 <div class="card">
-<h2 style="margin-bottom:16px">آموزش سرور</h2>
+
+<h2 style="margin-bottom:16px">
+آموزش سرور
+</h2>
+
 <p style="color:#a9b6cc;line-height:2">
-This section is intended for tutorials on roleplay, chat rules, economic systems, jobs, heists, and a guide to getting started in the game.
+This section is intended for tutorials on roleplay, chat rules,
+economic systems, jobs, heists, and a guide to getting started in the game.
 You can later replace this with actual videos, images, and instructional text.
 </p>
+
 <div class="actions" style="margin-top:20px">
-<a class="btn primary" href="#">VIDEO Video Tutorial</a>
-<a class="btn secondary" href="#">GUIDE Text Guide</a>
+
+<a class="btn primary" href="#">
+VIDEO Video Tutorial
+</a>
+
+<a class="btn secondary" href="#">
+GUIDE Text Guide
+</a>
+
 </div>
+
 </div>
+
 </section>
 
 <div class="footer">
-© 2026 Alliance Roleplay • Cracked By Unknown.Dev 
-</div>
+© 2026 Alliance Roleplay • Cracked By Unknown.Dev
 </div>
 
+</div>
 
 <script>
-const resourceName = typeof GetParentResourceName === 'function'
-  ? GetParentResourceName() : 'alliance_dashboard';
+/*
+ * FiveM detection
+ *
+ * در FiveM تابع GetParentResourceName وجود دارد.
+ * در Preview مرورگر وجود ندارد.
+ */
+const isFiveM = typeof GetParentResourceName === 'function';
 
-function nui(name, data = {}) {
-  return fetch(`https://${resourceName}/${name}`, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json; charset=UTF-8'},
-    body: JSON.stringify(data)
-  }).catch(() => {});
+const resourceName = isFiveM
+  ? GetParentResourceName()
+  : 'alliance_dashboard';
+
+/*
+ * در FiveM صفحه ابتدا مخفی است.
+ * در مرورگر Preview صفحه مستقیم نمایش داده می‌شود.
+ */
+if(isFiveM){
+  document.body.classList.add('nui-mode');
+}else{
+  document.body.classList.add('preview-mode');
+}
+
+function nui(name, data = {}){
+
+  /*
+   * در Preview نباید fetch مربوط به FiveM اجرا شود.
+   * این باعث خطای بی‌دلیل در Preview می‌شود.
+   */
+  if(!isFiveM) return Promise.resolve();
+
+  return fetch(`https://${resourceName}/${name}`,{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json; charset=UTF-8'
+    },
+    body:JSON.stringify(data)
+  }).catch(()=>{
+    /*
+     * جلوگیری از خراب شدن UI در صورت نبود callback سمت Lua
+     */
+    return null;
+  });
 }
 
 function showPage(id, el){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  const page=document.getElementById(id);
-  if(page) page.classList.add('active');
-  if(el) el.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  document.querySelectorAll('.page').forEach((page)=>{
+    page.classList.remove('active');
+  });
+
+  document.querySelectorAll('.tab').forEach((tab)=>{
+    tab.classList.remove('active');
+  });
+
+  const page = document.getElementById(id);
+
+  if(page){
+    page.classList.add('active');
+  }
+
+  if(el){
+    el.classList.add('active');
+  }
+
+  /*
+   * بعضی محیط‌های NUI رفتار متفاوتی با scroll دارند.
+   * fallback هم اضافه شده تا خطای احتمالی ایجاد نشود.
+   */
+  try{
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    });
+  }catch(e){
+    window.scrollTo(0,0);
+  }
 }
 
 function updateClock(){
-  const now=new Date();
-  const h=now.getHours().toString().padStart(2,'0');
-  const m=now.getMinutes().toString().padStart(2,'0');
-  const clock=document.getElementById('clock');
-  if(clock) clock.textContent=h+':'+m;
+
+  const now = new Date();
+
+  const h = now
+    .getHours()
+    .toString()
+    .padStart(2,'0');
+
+  const m = now
+    .getMinutes()
+    .toString()
+    .padStart(2,'0');
+
+  const clock = document.getElementById('clock');
+
+  if(clock){
+    clock.textContent = h + ':' + m;
+  }
 }
 
-function setText(id, value){
-  const el=document.getElementById(id);
-  if(el) el.textContent = value ?? '-';
+function setText(id,value){
+
+  const el = document.getElementById(id);
+
+  if(el){
+    el.textContent =
+      value !== undefined &&
+      value !== null &&
+      value !== ''
+        ? value
+        : '-';
+  }
 }
 
 function updateDashboard(data){
-  if(!data) return;
-  setText('playerName', data.player?.name || 'Player');
-  setText('playerMeta', `Server ID • ${data.player?.id ?? '-'}`);
-  setText('identifier', data.player?.identifier || 'No identifier');
-  setText('playersOnline', data.server?.players ?? 0);
-  setText('playtime', data.player?.playtime || '0h');
+
+  if(!data || typeof data !== 'object'){
+    return;
+  }
+
+  const player = data.player || {};
+  const server = data.server || {};
+
+  setText(
+    'playerName',
+    player.name || 'Player'
+  );
+
+  setText(
+    'playerMeta',
+    `Server ID • ${player.id ?? '-'}`
+  );
+
+  setText(
+    'identifier',
+    player.identifier || 'No identifier'
+  );
+
+  setText(
+    'playersOnline',
+    server.players ?? 0
+  );
+
+  setText(
+    'playtime',
+    player.playtime || '0h'
+  );
+
   document.body.classList.add('nui-open');
 }
 
-window.addEventListener('message', (event)=>{
-  const d=event.data || {};
-  if(d.action==='open'){
+/*
+ * NUI message handler
+ *
+ * callback names دست نخورده:
+ * open
+ * close
+ * data
+ */
+window.addEventListener('message',(event)=>{
+
+  const d = event && event.data
+    ? event.data
+    : {};
+
+  if(d.action === 'open'){
+
     document.body.classList.add('nui-open');
+
     nui('requestData');
   }
-  if(d.action==='close'){
+
+  if(d.action === 'close'){
+
     document.body.classList.remove('nui-open');
   }
-  if(d.action==='data'){
+
+  if(d.action === 'data'){
+
     updateDashboard(d.data);
   }
 });
 
+/*
+ * ESC
+ */
 document.addEventListener('keydown',(e)=>{
-  if(e.key==='Escape'){
+
+  if(e.key === 'Escape'){
+
     nui('close');
   }
 });
 
+/*
+ * DOM Ready
+ */
 document.addEventListener('DOMContentLoaded',()=>{
+
   updateClock();
+
   setInterval(updateClock,1000);
 
-  const close=document.querySelector('.close-btn');
-  if(close) close.addEventListener('click',()=>nui('close'));
+  /*
+   * Close button
+   */
+  const close = document.querySelector('.close-btn');
 
-  const copy=document.getElementById('copyIdentifier');
-  if(copy) copy.addEventListener('click',()=>{
-    const value=document.getElementById('identifier')?.textContent || '';
-    if(navigator.clipboard) navigator.clipboard.writeText(value);
-    copy.textContent='COPIED';
-    setTimeout(()=>copy.textContent='COPY',1200);
-  });
+  if(close){
+
+    close.addEventListener('click',()=>{
+
+      nui('close');
+
+    });
+
+  }
+
+  /*
+   * Copy identifier
+   */
+  const copy = document.getElementById('copyIdentifier');
+
+  if(copy){
+
+    copy.addEventListener('click',async()=>{
+
+      const identifier =
+        document.getElementById('identifier');
+
+      const value =
+        identifier
+          ? identifier.textContent.trim()
+          : '';
+
+      if(!value){
+        return;
+      }
+
+      try{
+
+        if(
+          navigator.clipboard &&
+          typeof navigator.clipboard.writeText === 'function'
+        ){
+
+          await navigator.clipboard.writeText(value);
+
+        }else{
+
+          /*
+           * Fallback برای محیط‌هایی که clipboard API ندارند
+           */
+          const textarea =
+            document.createElement('textarea');
+
+          textarea.value = value;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+
+          document.body.appendChild(textarea);
+
+          textarea.focus();
+          textarea.select();
+
+          document.execCommand('copy');
+
+          textarea.remove();
+        }
+
+        copy.textContent = 'COPIED';
+
+        setTimeout(()=>{
+          copy.textContent = 'COPY';
+        },1200);
+
+      }catch(error){
+
+        /*
+         * اگر clipboard توسط مرورگر/NUI محدود شده باشد،
+         * UI همچنان خراب نمی‌شود.
+         */
+        copy.textContent = 'COPY';
+
+      }
+
+    });
+
+  }
+
 });
 </script>
 
